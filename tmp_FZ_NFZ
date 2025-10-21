@@ -1,1 +1,12 @@
 Ovo je privremena  za 22.10 labos
+------------------------------ predlozi za login funkcije(VI)
+FZ
+Sustav mora omogućiti registraciju putem vanjskog OAuth 2.0 servisa.
+Administrator dodjeljuje ulogu korisniku
+Uloga određuje pristup sustavu
+Uloga određuje izgled stranice
+Gmail bez uloge nema pristup
+NFZ
+Učitavanje stranica ne smije trajati dulje od 2 sekunde u predvidivim uvjetima.
+Sučelje je intuitivno i prilagođeno ulozi.
+-------------------------------
