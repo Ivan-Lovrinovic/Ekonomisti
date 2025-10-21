@@ -63,3 +63,16 @@ Stranica za unos i obradu putnih naloga i faktura
 - računovođe mogu obraditi podatke i vratiti izvještaje
 
 
+Sustav mora imati navigacijsku traku koja se dinamički prilagođava ulozi korisnika (različiti linkovi i opcije za radnika, klijenta, računovođu i administratora)
+
+Sustav mora omogućiti brz pristup profilnim postavkama iz svakog dijela aplikacije
+
+Svaki korisnik mora imati stranicu profila s osobnim i poslovnim informacijama
+
+Korisnik mora moći urediti svoje podatke (npr. broj telefona, e-mail, adresu, poziciju u firmi)
+
+Prilikom uređivanja profila, sustav mora validirati podatke u realnom vremenu (npr. provjera formata e-maila, duljine OIB-a)
+
+Klijentima i računovođama mora biti omogućeno filtriranje i pretraživanje dokumenata (po datumu, iznosu, statusu, klijentu itd.)
+
+
