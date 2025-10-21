@@ -9,4 +9,37 @@ Gmail bez uloge nema pristup
 NFZ
 Učitavanje stranica ne smije trajati dulje od 2 sekunde u predvidivim uvjetima.
 Sučelje je intuitivno i prilagođeno ulozi.
+
+
+
+
 -------------------------------
+Funkcijski zahtjevi za bazu podataka 
+Mora biti omogućeno upravljanje korisnicima šta predstavlja
+1. pohranu podataka o korisnicima : računovođe, klijenti, radnici, administrator
+2. pohrana informacija o korisničkim profilima (me, prezime, OIB, e-mail, kontakt podaci, pozicija, ostale potrebne informacije)
+3. računovođa treba imati evidenciju klijenata i radnika firme
+4. klijenti trebaju imati evidenciju radnika
+5. praćenje statusa radnika (trenutno zaposlen ili nezaposlen)
+
+Mora biti omogućeno upravljanje firmama šta predstavlja
+1. pohranu podataka o firmi 
+2. povezivanje radnika s više firmi
+3. povezivanje klijenata s firmama i računovođama 
+
+Mora biti omogućeno upravljanje dokumentima
+1. Pohranjivanje faktura i putnih naloga
+2. Evidencija obrađenih faktura 
+3. Pohrana izvještaja koji sadrže prihode, rashode, PDV, dobit/gubitak.
+4. Povezivanje putnih naloga i faktura s klijentima i firmama
+
+Mora biti omogućeno praćenje plaćanja
+1. Pohrana informacija o mjesečnim uplatama klijenata računovođi ( iznos, datum, kreditna kartica, status plaćanja)
+
+Mora biti omogućeno upravljanje sustavom
+1. Evidencija administratora i njegovih prava
+2. Omogućavanje administratoru pristup svim podatcima i upravljanje korisnicima
+3. Restrikcija određenih pozicija i prava određenih korisnika
+
+Integritet podataka
+1. Omogućiti ograničenja kao npr. jedan OIB se može pojaviti samo na jednom mjestu..
