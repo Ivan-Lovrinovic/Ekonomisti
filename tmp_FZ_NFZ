@@ -43,3 +43,23 @@ Mora biti omogućeno upravljanje sustavom
 
 Integritet podataka
 1. Omogućiti ograničenja kao npr. jedan OIB se može pojaviti samo na jednom mjestu..
+
+
+
+-------------------------------
+Funkcijski zahtjevi za frontend
+Login stranica prije prijave u aplikaciju s gumbom za registraciju u slučaju novog korisnika
+Svakom novom korisniku se pri registraciji mora prikazati obrazac za popunu podataka potrebnih za sustav
+
+Mora biti prikaza naslovne stranice s informacijama ovisno o korisniku
+- prikaz i mogućnosti ovise o ulozi
+- gumb koji vodi na stranicu za unos i obradu putnih naloga i faktura
+- gumb za odjavu
+
+Radniku se za prvi pristup u sesiji prikazuje odabir klijenta za kojeg unosi podatke
+
+Stranica za unos i obradu putnih naloga i faktura
+- klijentima i radnicima omogućen unos putnih naloga i faktura prema zadanom obrascu
+- računovođe mogu obraditi podatke i vratiti izvještaje
+
+
