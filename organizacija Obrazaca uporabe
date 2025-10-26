@@ -1,0 +1,76 @@
+DIO 1 – Autentifikacija i upravljanje korisnicima (Admin tim)
+
+Akteri: Administrator, OAuth 2.0 servis, svi korisnici
+
+Prijava putem OAuth 2.0
+Svi korisnici se prijavljuju putem vanjskog servisa i odabiru svoju ulogu..
+
+Administrator dodaje računovođu
+Administrator unosi novog računovođu i aktivira mu pristup sustavu.
+
+Administrator upravlja korisnicima
+Pregled, uređivanje i deaktivacija korisnika (računovođe, klijenti, radnici).
+
+Administrator pregledava izvještaje i aktivnosti
+Ima uvid u sve korisnike i aktivnosti u sustavu radi kontrole i nadzora.
+
+DIO 2 – Funkcionalnosti računovođe (Računovođa tim)
+
+Akteri: Računovođa, Klijent
+
+Računovođa dodaje klijenta
+Unos klijenta u vlastiti popis i omogućavanje pristupa sustavu.
+
+Računovođa postavlja cijenu usluge
+Definira mjesečnu cijenu računovodstvene usluge za svakog klijenta.
+
+Računovođa pregledava dokumente klijenta
+Pregled svih unesenih faktura i putnih naloga klijenta.
+
+Računovođa izrađuje mjesečni izvještaj
+Generira izvještaj s prihodom, rashodom, PDV-om i dobiti/gubitkom.
+
+Označavanje klijenta kao “odrađenog”
+Nakon završene obrade, klijent se označava kao obrađen za taj mjesec.
+
+DIO 3 – Funkcionalnosti klijenta (Klijent tim)
+
+Akteri: Klijent, Računovođa
+
+Klijent dodaje radnike
+Unosi nove radnike firme i njihove osnovne podatke.
+
+Unos fakture (klijent/radnik)
+Klijent ili radnik unosi fakturu putem definiranog obrasca.
+
+Unos putnog naloga (klijent/radnik)
+Klijent ili radnik unosi putni nalog s relevantnim podacima.
+
+Pregled financijskog stanja firme
+Klijent vidi trenutno stanje računa, PDV, prihode, rashode i dobit.
+
+Plaćanje mjesečne usluge
+Klijent plaća računovođu putem kreditne kartice kroz platformu.
+
+DIO 4 – Funkcionalnosti radnika (Radnik tim)
+
+Akteri: Radnik, Klijent
+
+Radnik odabire firmu pri prijavi
+Ako radi u više firmi, odabire za koju se prijavljuje.
+
+Unos putnog naloga
+Radnik unosi putne naloge (ako ima ovlasti).
+
+Unos fakture
+Radnik može unositi fakture ako mu je to omogućeno.
+
+DIO 5 – Sistemske funkcionalnosti (Backend tim)
+
+Akteri: Sustav (automatizirani procesi)
+
+Automatsko slanje izvještaja e-mailom
+Sustav automatski šalje klijentu izvještaj i račun na e-mail.
+
+Sigurnosno pohranjivanje podataka
+Sustav periodično izrađuje sigurnosne kopije svih podataka.
