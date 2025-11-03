@@ -1,53 +1,72 @@
-import { useAuth0 } from "@auth0/auth0-react";
+import { useEffect, useState } from "react";
 
 function FrontPage() {
-  const { isAuthenticated, user, logout } = useAuth0();
+  const [user, setUser] = useState(null);
 
-  if (!isAuthenticated) {
-    return (
-      <div className="loading-container">
-        <h1 className="error-title">Niste prijavljeni</h1>
-        <a href="/" className="link">
-          Vratite se na prijavu
-        </a>
-      </div>
-    );
-  }
+  useEffect(() => {
+    fetch("http://localhost:9090/api/user", {
+      method: "GET",
+      credentials: "include", 
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch user");
+        return res.json();
+      })
+      .then((data) => setUser(data))
+      .catch((err) => console.error(err));
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      await fetch("http://localhost:9090/logout", {
+        method: "POST",
+        credentials: "include", 
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      });
+
+      window.location.href = "http://localhost:5173";
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
+
+  if (!user) return <p>Učitavanje...</p>;
 
   return (
     <div className="page-background">
       <div className="content-container">
         <div className="header">
           <h1 className="page-title">Dobrodošli!</h1>
-          <button
-            onClick={() => logout({ returnTo: window.location.origin })}
-            className="logout-button"
-          >
+          <button onClick={handleLogout} className="logout-button">
             Odjava
           </button>
         </div>
 
         <div className="success-message">
-          <h2 className="success-title">
-            Uspješno ste prijavljeni!
-          </h2>
+          <h2 className="success-title">Uspješno ste prijavljeni!</h2>
           <p className="success-text">
-            Dobrodošli, <strong>{user?.name || user?.email}</strong>
+            Dobrodošli, <strong>{user.name}</strong>
           </p>
         </div>
 
         <div className="info-grid">
           <div className="info-card">
             <h3 className="info-title">Korisnički podaci:</h3>
-            <p><strong>Ime:</strong> {user?.name}</p>
-            <p><strong>Email:</strong> {user?.email}</p>
-            <p><strong>Email verifikovan:</strong> {user?.email_verified ? 'Da' : 'Ne'}</p>
+            <p><strong>Ime:</strong> {user.name}</p>
+            <p><strong>Email:</strong> {user.email}</p>
           </div>
-
-          <div className="info-card">
-            <h3 className="info-title">Auth0 informacije:</h3>
-            <p className="user-id"><strong>User ID:</strong> {user?.sub}</p>
-          </div>
+          {user.picture && (
+            <div className="info-card">
+              <img
+                src={user.picture}
+                alt="Profil"
+                width="100"
+                style={{ borderRadius: "50%" }}
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>
