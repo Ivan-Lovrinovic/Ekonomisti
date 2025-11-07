@@ -1,0 +1,74 @@
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useUser } from "../../UserContext.jsx";
+import Odabir from "./odabir.jsx";
+
+function Radnik() {
+  const { user, tvrtke, trenutnaTvrtka, setTrenutnaTvrtka } = useUser();
+
+
+  const handleLogout = async () => {
+    try {
+      await fetch("http://localhost:9090/logout", {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      });
+      window.location.href = "http://localhost:5173";
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
+
+  if (!user) return <p>Učitavanje korisnika...</p>;
+  if (!tvrtke || tvrtke.length === 0) return <p>Učitavanje tvrtki...</p>;
+
+
+  if (!trenutnaTvrtka) {
+    return <Odabir opcije={tvrtke} onOdaberi={setTrenutnaTvrtka} />;
+  }
+
+  return (
+    <div className="page-background">
+      <div className="content-container">
+        <div className="header">
+          <h1 className="page-title">Dobrodošli, {user.name}!</h1>
+          <Link to="/nalog" style={{ textDecoration: "none", color: "blue" }}>
+            Putni nalog
+          </Link>
+          <button onClick={handleLogout} className="logout-button">
+            Odjava
+          </button>
+        </div>
+
+        <div className="success-message">
+          <h2 className="success-title">Uspješno ste prijavljeni!</h2>
+          <p className="success-text">
+            Dobrodošli, <strong>{user.name}</strong>
+          </p>
+        </div>
+
+        <div className="info-grid">
+          <div className="info-card">
+            <h3 className="info-title">Korisnički podaci:</h3>
+            <p><strong>Ime:</strong> {user.name}</p>
+            <p><strong>Email:</strong> {user.email}</p>
+            <p><strong>Tvrtka:</strong> {trenutnaTvrtka}</p>
+          </div>
+          {user.picture && (
+            <div className="info-card">
+              <img
+                src={user.picture}
+                alt="Profil"
+                width="100"
+                style={{ borderRadius: "50%" }}
+              />
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Radnik;
