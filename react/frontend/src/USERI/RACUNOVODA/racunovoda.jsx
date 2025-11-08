@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { useUser } from "../../UserContext.jsx";
 
@@ -29,6 +28,9 @@ function Racunovoda() {
           <h1 className="page-title">Dobrodošli, {user.name}!</h1>
           <Link to="/nalog" style={{ textDecoration: "none", color: "blue" }}>
             Putni nalog
+          </Link>
+          <Link to="/racunklijenti" style={{ textDecoration: "none", color: "blue" }}>
+            Klijenti
           </Link>
           <button onClick={handleLogout} className="logout-button">
             Odjava

@@ -6,11 +6,28 @@ export function UserProvider({ children }) {
   const [user, setUser] = useState(null);
   const [tvrtke, setTvrtke] = useState([]);
   const [trenutnaTvrtka, setTrenutnaTvrtka] = useState(null);
+  const [klijenti, setKlijenti] = useState([]);
+  const [slobodniKlijenti, setSlobodniKlijenti] = useState([]);
+  const oznaciOdradjen = (id) => {
+  setKlijenti((prev) =>
+    prev.map((k) =>
+      k.id === id
+        ? { ...k, status: k.status === "Odrađen" ? "Neodrađen" : "Odrađen" }
+        : k
+    )
+  );
+};
 
   // MOCK PODACI
   useEffect(() => {
     if (!user) setUser({ name: "Luka", email: "luka@test.com" });
     if (!tvrtke || tvrtke.length === 0) setTvrtke(["Tvrtka A", "Tvrtka B", "Tvrtka C"]);
+    if (klijenti.length === 0)
+      setKlijenti([
+        { id: 1, ime: "Klijent A", status: "Neodrađen" },
+        { id: 2, ime: "Klijent B", status: "Odrađen" },
+        { id: 3, ime: "Klijent C", status: "Neodrađen" },
+  ]);
   }, []);
 
 
@@ -37,7 +54,6 @@ export function UserProvider({ children }) {
 
 
 
-
    useEffect(() => {
     // Ovdje pozvati API za dohvat svih tvrtki
   });
@@ -49,7 +65,7 @@ export function UserProvider({ children }) {
 
   return (
     <UserContext.Provider
-      value={{ user, setUser, tvrtke, setTvrtke, trenutnaTvrtka, setTrenutnaTvrtka }}
+      value={{ user, setUser, tvrtke, setTvrtke, trenutnaTvrtka, setTrenutnaTvrtka, klijenti, setKlijenti, slobodniKlijenti, setSlobodniKlijenti, oznaciOdradjen}}
     >
       {children}
     </UserContext.Provider>

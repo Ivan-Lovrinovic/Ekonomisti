@@ -4,6 +4,10 @@ import FrontPage from './pages/frontpage.jsx';
 import Admin from './USERI/ADMIN/admin.jsx';
 import Klijent from './USERI/KLIJENT/klijent.jsx';
 import Racunovoda from './USERI/RACUNOVODA/racunovoda.jsx';
+import Racunklijenti from "./USERI/RACUNOVODA/racunklijenti.jsx";
+import Dodajklijenta from "./USERI/RACUNOVODA/dodajklijenta.jsx";
+import KlijentInfo from "./USERI/RACUNOVODA/klijentInfo.jsx";
+import Izvjestaj from "./USERI/RACUNOVODA/izvjestaj.jsx";
 import Radnik from './USERI/RADNIK/radnik.jsx';
 import Odabir from './USERI/RADNIK/odabir.jsx';
 import NoviNalog from './USERI/RADNIK/novinalog.jsx';
@@ -21,6 +25,10 @@ function App() {
           <Route path="/test" element={<Admin />} />
           <Route path="/klijent" element={<Klijent />} />
           <Route path="/racunovoda" element={<Racunovoda />} />
+          <Route path="/racunklijenti" element={<Racunklijenti />} />
+          <Route path="/dodajklijenta" element={<Dodajklijenta />} />
+          <Route path="/izvjestaj/:klijentId/:mjesec" element={<Izvjestaj />} />
+          <Route path="/klijent/:id" element={<KlijentInfo />} />
           <Route path="/radnik" element={<Radnik />} />
           <Route path="/odabir" element={<Odabir />} />
           <Route path="/nalog" element={<Nalog />} />
