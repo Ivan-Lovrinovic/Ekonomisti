@@ -8,6 +8,7 @@ import Racunklijenti from "./USERI/RACUNOVODA/racunklijenti.jsx";
 import Dodajklijenta from "./USERI/RACUNOVODA/dodajklijenta.jsx";
 import KlijentInfo from "./USERI/RACUNOVODA/klijentInfo.jsx";
 import Izvjestaj from "./USERI/RACUNOVODA/izvjestaj.jsx";
+import PostaviCijenu from "./USERI/RACUNOVODA/postaviCijenu.jsx";
 import Radnik from './USERI/RADNIK/radnik.jsx';
 import Odabir from './USERI/RADNIK/odabir.jsx';
 import NoviNalog from './USERI/RADNIK/novinalog.jsx';
@@ -30,7 +31,8 @@ function App() {
           <Route path="/racunklijenti" element={<Racunklijenti />} />
           <Route path="/dodajklijenta" element={<Dodajklijenta />} />
           <Route path="/izvjestaj/:klijentId/:mjesec" element={<Izvjestaj />} />
-          <Route path="/klijent/:id" element={<KlijentInfo />} />
+          <Route path="/klijent/:klijentId" element={<KlijentInfo />} />
+          <Route path="/postaviCijenu/:klijentId" element={<PostaviCijenu />} />
           <Route path="/radnik" element={<Radnik />} />
           <Route path="/odabir" element={<Odabir />} />
           <Route path="/nalog" element={<Nalog />} />

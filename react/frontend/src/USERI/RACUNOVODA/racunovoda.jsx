@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { useUser } from "../../UserContext.jsx";
+import { useRacunovoda } from "./RacunovodaContext.jsx";
 
 
 function Racunovoda() {
-  const { user, tvrtke, trenutnaTvrtka, setTrenutnaTvrtka } = useUser();
+  const { user } = useUser();
+  const { klijenti, setKlijenti, slobodniKlijenti, setSlobodniKlijenti, oznaciOdradjen } = useRacunovoda();
 
 
   const handleLogout = async () => {
@@ -26,9 +28,6 @@ function Racunovoda() {
       <div className="content-container">
         <div className="header">
           <h1 className="page-title">Dobrodošli, {user.name}!</h1>
-          <Link to="/nalog" style={{ textDecoration: "none", color: "blue" }}>
-            Putni nalog
-          </Link>
           <Link to="/racunklijenti" style={{ textDecoration: "none", color: "blue" }}>
             Klijenti
           </Link>

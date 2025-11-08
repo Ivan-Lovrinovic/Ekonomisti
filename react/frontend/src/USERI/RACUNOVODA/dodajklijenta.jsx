@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../../UserContext";
+import { useRacunovoda } from "./RacunovodaContext";
 
 function Dodajklijenta() {
 
 const navigate = useNavigate();
-const { slobodniKlijenti } = useUser();
+const { slobodniKlijenti } = useRacunovoda();
 
 return (
     <div>
@@ -15,7 +16,7 @@ return (
                 {slobodniKlijenti.length > 0 ? (
                 slobodniKlijenti.map((k) => <li key={k.id}>{k.ime}</li>)
                 ) : (
-                <p>Nemate klijenata.</p>
+                <p>Nema slobodnih klijenata.</p>
                 )}
             </ul>
     </div>

@@ -2,11 +2,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useUser } from "../../UserContext";
+import { useRacunovoda } from "./RacunovodaContext";
 
 function Racunklijenti() {
   const navigate = useNavigate();
-  const { klijenti, oznaciOdradjen } = useUser();
-
+  const { klijenti, oznaciOdradjen } = useRacunovoda();
 
   // Lokalni state za odabir
   const [odabraniKlijent, setOdabraniKlijent] = useState("");
@@ -54,6 +54,19 @@ function Racunklijenti() {
               }}
             >
               {k.status === "Odrađen" ? "Poništi" : "Označi kao odrađen"}
+            </button>
+
+            <button
+              onClick={() => navigate(`/postaviCijenu/${k.id}`)}
+              style={{
+                marginLeft: "10px",
+                borderRadius: "6px",
+                cursor: "pointer",
+                backgroundColor: "#007bff",
+                color: "white",
+              }}
+            >
+              Postavi cijenu
             </button>
           </li>
         ))}

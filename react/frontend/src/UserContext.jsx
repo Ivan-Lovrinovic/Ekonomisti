@@ -1,19 +1,16 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { KlijentProvider } from "./USERI/KLIJENT/KlijentContext.jsx";
 import { RadnikProvider } from "./USERI/RADNIK/RadnikContext.jsx";
+import { RacunovodaProvider } from "./USERI/RACUNOVODA/RacunovodaContext.jsx";
 
 const UserContext = createContext();
 
 export function UserProvider({ children }) {
   const [user, setUser] = useState(null);
-};
+  const [loading, setLoading] = useState(true);
 
-
-    useEffect(() => {
-    fetch("http://localhost:9090/api/user", {
-      method: "GET",
-      credentials: "include", 
-    })
+  useEffect(() => {
+    fetch("http://localhost:9090/api/user", { method: "GET", credentials: "include" })
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch user");
         return res.json();
@@ -56,25 +53,8 @@ export function UserProvider({ children }) {
     );
   }
 
-
-
-   useEffect(() => {
-    // Ovdje pozvati API za dohvat svih tvrtki
-  });
-
-
-  useEffect(() => {
-      // Ovdje pozvati API za dohvat svih ostalih putnih naloga korisnika
-   });
-
-  return (
-    <UserContext.Provider
-      value={{ user, setUser, tvrtke, setTvrtke, trenutnaTvrtka, setTrenutnaTvrtka, klijenti, setKlijenti, slobodniKlijenti, setSlobodniKlijenti, oznaciOdradjen}}
-    >
-      {children}
-    </UserContext.Provider>
-  );
-
+  return <UserContext.Provider value={{ user, setUser }}>{children}</UserContext.Provider>;
+}
 
 export function useUser() {
   return useContext(UserContext);
