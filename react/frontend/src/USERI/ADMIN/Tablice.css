@@ -1,0 +1,49 @@
+.tablica-box {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 16px;
+}
+
+.tablica-toolbar {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.tablica-btn {
+  padding: 10px 14px;
+  background: #0d6efd;
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.tablica-btn:hover {
+  background: #0b5ed7;
+}
+
+.tablica-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.tablica-table thead th {
+  background: #f8f9fa;
+  text-align: left;
+  padding: 10px;
+  font-weight: 600;
+}
+.tablica-table th,
+.tablica-table td {
+  border-top: 1px solid #e6e6e6;
+  padding: 10px;
+}
+
+.tablica-note {
+  margin-top: 10px;
+  opacity: 0.7;
+}

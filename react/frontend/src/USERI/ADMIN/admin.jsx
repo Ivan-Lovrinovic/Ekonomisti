@@ -5,7 +5,6 @@ import { useUser } from "../../UserContext.jsx";
 function Admin() {
   const { user, tvrtke, trenutnaTvrtka, setTrenutnaTvrtka } = useUser();
 
-
   const handleLogout = async () => {
     try {
       await fetch("http://localhost:9090/logout", {
@@ -26,8 +25,24 @@ function Admin() {
       <div className="content-container">
         <div className="header">
           <h1 className="page-title">Dobrodošli, {user.name}!</h1>
-          <Link to="/nalog" style={{ textDecoration: "none", color: "blue" }}>
-            Putni nalog
+
+          <Link
+            to="/DodajKorisnika"
+            style={{ textDecoration: "none", color: "blue" }}
+          >
+            Dodaj korisnika
+          </Link>
+          <Link
+            to="/ListaKorisnika"
+            style={{ textDecoration: "none", color: "blue" }}
+          >
+            Upravljaj korisnicima
+          </Link>
+          <Link
+            to="/Aktivnosti"
+            style={{ textDecoration: "none", color: "blue" }}
+          >
+            Aktivnosti
           </Link>
           <button onClick={handleLogout} className="logout-button">
             Odjava
@@ -44,8 +59,12 @@ function Admin() {
         <div className="info-grid">
           <div className="info-card">
             <h3 className="info-title">Korisnički podaci:</h3>
-            <p><strong>Ime:</strong> {user.name}</p>
-            <p><strong>Email:</strong> {user.email}</p>
+            <p>
+              <strong>Ime:</strong> {user.name}
+            </p>
+            <p>
+              <strong>Email:</strong> {user.email}
+            </p>
           </div>
           {user.picture && (
             <div className="info-card">

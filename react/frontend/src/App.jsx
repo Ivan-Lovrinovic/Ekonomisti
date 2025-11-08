@@ -1,21 +1,24 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LoginPage from './pages/loginpage.jsx';
-import FrontPage from './pages/frontpage.jsx';
-import Admin from './USERI/ADMIN/admin.jsx';
-import Klijent from './USERI/KLIJENT/klijent.jsx';
-import Racunovoda from './USERI/RACUNOVODA/racunovoda.jsx';
+import LoginPage from "./pages/loginpage.jsx";
+import FrontPage from "./pages/frontpage.jsx";
+import Admin from "./USERI/ADMIN/admin.jsx";
+import Klijent from "./USERI/KLIJENT/klijent.jsx";
+import Racunovoda from "./USERI/RACUNOVODA/racunovoda.jsx";
 import Racunklijenti from "./USERI/RACUNOVODA/racunklijenti.jsx";
 import Dodajklijenta from "./USERI/RACUNOVODA/dodajklijenta.jsx";
 import KlijentInfo from "./USERI/RACUNOVODA/klijentInfo.jsx";
 import Izvjestaj from "./USERI/RACUNOVODA/izvjestaj.jsx";
 import PostaviCijenu from "./USERI/RACUNOVODA/postaviCijenu.jsx";
-import Radnik from './USERI/RADNIK/radnik.jsx';
-import Odabir from './USERI/RADNIK/odabir.jsx';
-import NoviNalog from './USERI/RADNIK/novinalog.jsx';
-import Nalog from './USERI/RADNIK/nalog.jsx';
+import Radnik from "./USERI/RADNIK/radnik.jsx";
+import Odabir from "./USERI/RADNIK/odabir.jsx";
+import NoviNalog from "./USERI/RADNIK/novinalog.jsx";
+import Nalog from "./USERI/RADNIK/nalog.jsx";
 import { UserProvider } from "./UserContext.jsx";
-import Racuni from './USERI/KLIJENT/racuni.jsx';
+import Racuni from "./USERI/KLIJENT/racuni.jsx";
 import Podaci from "./USERI/KLIJENT/podaci.jsx";
+import DodajKorisnika from "./USERI/ADMIN/DodajKorisnika.jsx";
+import Aktivnosti from "./USERI/ADMIN/Aktivnosti.jsx";
+import ListaKorisnika from "./USERI/ADMIN/ListaKorisnika.jsx";
 
 function App() {
   return (
@@ -23,7 +26,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LoginPage />} />
-          
+
           <Route path="/pocetna" element={<FrontPage />} />
           <Route path="/test" element={<Admin />} />
           <Route path="/klijent" element={<Klijent />} />
@@ -39,6 +42,9 @@ function App() {
           <Route path="/novinalog" element={<NoviNalog />} />
           <Route path="/racuni" element={<Racuni />} />
           <Route path="/podaci" element={<Podaci />} />
+          <Route path="/Aktivnosti" element={<Aktivnosti />} />
+          <Route path="/ListaKorisnika" element={<ListaKorisnika />} />
+          <Route path="/DodajKorisnika" element={<DodajKorisnika />} />
         </Routes>
       </Router>
     </UserProvider>
