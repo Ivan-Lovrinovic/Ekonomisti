@@ -19,6 +19,7 @@ public class AddAccountantController {
 
     @PostMapping
     public ResponseEntity<String> addKorisnik(@RequestBody Korisnik korisnik) {
+        System.out.println("request recieved");
         try {
             accountantService.addKorisnik(korisnik);
             return ResponseEntity.ok("Korisnik added successfully");

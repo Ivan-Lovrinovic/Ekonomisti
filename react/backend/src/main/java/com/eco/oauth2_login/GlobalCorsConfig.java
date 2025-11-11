@@ -1,4 +1,4 @@
-package com.eco.oauth2_login;
+/*package com.eco.oauth2_login;
 
 // GlobalCorsConfig.java
 import org.springframework.context.annotation.Bean;
@@ -27,4 +27,4 @@ public class GlobalCorsConfig {
 
         return new CorsFilter(source);
     }
-}
+}*/
